@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ClosingData as ClosingDataType } from '../../types';
+import type { ClosingData as ClosingDataType } from '../../types';
 
 interface ClosingSectionProps {
   data: ClosingDataType;
