@@ -8,6 +8,18 @@ export const invitationData: InvitationData = {
     date: "2024-12-20",
     location: "Grand Ballroom, Jakarta"
   },
+  opening: {
+    title: "The Wedding of",
+    coupleNames: {
+      first: "Lulu",
+      second: "Alex",
+      ampersand: "&"
+    },
+    backgroundImage: "https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80",
+    overlayColor: "rgba(0, 0, 0, 0.5)",
+    invitationText: "We invite you to celebrate our special day",
+    buttonText: "Open Invitation"
+  },
   hero: {
     backgroundImage: "https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80",
     overlayColor: "rgba(0, 0, 0, 0.4)",
@@ -151,7 +163,7 @@ export const invitationData: InvitationData = {
     backgroundImage: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1920&q=80"
   },
   music: {
-    src: "/audio/wedding-music.mp3",
+    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
     title: "Perfect - Ed Sheeran"
   }
 };

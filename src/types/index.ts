@@ -1,5 +1,6 @@
 export interface InvitationData {
   meta: MetaData;
+  opening: OpeningSection;
   hero: HeroSection;
   quote: QuoteSection;
   bride: Person;
@@ -20,6 +21,19 @@ export interface MetaData {
   title: string;
   date: string;
   location: string;
+}
+
+export interface OpeningSection {
+  title: string;
+  coupleNames: {
+    first: string;
+    second: string;
+    ampersand: string;
+  };
+  backgroundImage: string;
+  overlayColor: string;
+  invitationText: string;
+  buttonText: string;
 }
 
 export interface HeroSection {
