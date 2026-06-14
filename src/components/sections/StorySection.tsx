@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { StoryItem as StoryItemType } from '../../types';
+import type { StoryItem as StoryItemType } from '../../types';
 
 interface StorySectionProps {
   story: StoryItemType[];

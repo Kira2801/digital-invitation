@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { QuoteSection as QuoteSectionType } from '../../types';
+import type { QuoteSection as QuoteSectionType } from '../../types';
 
 interface QuoteSectionProps {
   data: QuoteSectionType;

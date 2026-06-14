@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GiftItem as GiftItemType } from '../../types';
+import type { GiftItem as GiftItemType } from '../../types';
 
 interface GiftsSectionProps {
   gifts: GiftItemType[];

@@ -1,4 +1,4 @@
-import { InvitationData } from '../types';
+import type { InvitationData } from '../types';
 
 export const invitationData: InvitationData = {
   meta: {

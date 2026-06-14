@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { OpeningSection as OpeningSectionType } from '../../types';
+import type { OpeningSection as OpeningSectionType } from '../../types';
 
 interface OpeningSectionProps {
   data: OpeningSectionType;
