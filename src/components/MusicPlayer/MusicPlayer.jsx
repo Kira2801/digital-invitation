@@ -1,14 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-interface MusicPlayerProps {
-  src: string;
-  title: string;
-  isInitiallyPlaying?: boolean;
-  onTogglePlay?: () => void;
-}
-
-const MusicPlayer: React.FC<MusicPlayerProps> = ({ 
+const MusicPlayer = ({ 
   src, 
   title, 
   isInitiallyPlaying = false,
@@ -16,7 +9,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
 }) => {
   const [isPlaying, setIsPlaying] = useState(isInitiallyPlaying);
   const [showControls, setShowControls] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioRef = useRef(null);
 
   useEffect(() => {
     if (audioRef.current) {
