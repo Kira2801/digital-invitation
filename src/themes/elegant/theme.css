@@ -1,0 +1,137 @@
+/**
+ * themes/elegant/theme.css
+ * ------------------------
+ * Visual identity ("design tokens") for the Elegant theme: gold/cream
+ * shimmer palette, glass cards, petal/music animations, etc.
+ *
+ * Everything is scoped under `.theme-elegant` so multiple themes can define
+ * their own versions of the same class names (e.g. `.shimmer-text`,
+ * `.glass-card`) without clashing when bundled together.
+ *
+ * Imported once by `themes/elegant/Theme.jsx`.
+ */
+
+/* Theme owns its own background/foreground colors */
+.theme-elegant {
+  background: #1a0f0a;
+  color: #faf6f0;
+  min-height: 100vh;
+}
+
+.theme-elegant .section-divider {
+  @apply flex items-center gap-3 my-6;
+}
+.theme-elegant .section-divider::before,
+.theme-elegant .section-divider::after {
+  content: '';
+  @apply flex-1 h-px bg-gradient-to-r from-transparent via-gold-400 to-transparent;
+}
+
+.theme-elegant .gold-text {
+  background: linear-gradient(135deg, #e4a924 0%, #f2d88e 50%, #d4880d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.theme-elegant .glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 136, 13, 0.2);
+}
+
+.theme-elegant .parallax-scene {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.theme-elegant .parallax-layer {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Shimmer text */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.theme-elegant .shimmer-text {
+  background: linear-gradient(90deg, #d4880d 0%, #f2d88e 25%, #e4a924 50%, #f2d88e 75%, #d4880d 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Countdown timer box */
+.theme-elegant .countdown-box {
+  background: linear-gradient(145deg, rgba(212, 136, 13, 0.15), rgba(228, 169, 36, 0.05));
+  border: 1px solid rgba(212, 136, 13, 0.3);
+  border-radius: 12px;
+}
+
+/* Timeline line */
+.theme-elegant .timeline-line {
+  background: linear-gradient(to bottom, transparent, #d4880d, #e4a924, #d4880d, transparent);
+}
+
+/* Floral ornament */
+.theme-elegant .ornament {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #d4880d;
+  opacity: 0.7;
+}
+
+/* Letter spacing helper */
+.theme-elegant .tracking-widest-custom {
+  letter-spacing: 0.3em;
+}
+
+/* Smooth transition for envelope */
+.theme-elegant .envelope-transition {
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Input focus styles (gold ring) */
+.theme-elegant input:focus,
+.theme-elegant textarea:focus,
+.theme-elegant select:focus {
+  outline: none;
+  border-color: #d4880d;
+  box-shadow: 0 0 0 2px rgba(212, 136, 13, 0.2);
+}
+
+/* Overlay noise texture */
+.theme-elegant .noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+/* Petal fall animation (used by HeroBackground) */
+@keyframes petalFall {
+  0% { transform: translateY(-10vh) translateX(0px) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(110vh) translateX(60px) rotate(720deg); opacity: 0; }
+}
+@keyframes petalFloat {
+  0%, 100% { transform: translateX(0px); }
+  50% { transform: translateX(30px); }
+}
+
+/* Floating music note animation */
+@keyframes musicFloat {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 0.5; }
+  100% { transform: translateY(-60px) scale(0.5); opacity: 0; }
+}
+.theme-elegant .music-note {
+  animation: musicFloat 2s ease-out forwards;
+}

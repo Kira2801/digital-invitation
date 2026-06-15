@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Global / theme-agnostic base styles.
+ *
+ * Theme-specific design tokens (color palette, shimmer effects, glass
+ * cards, animations, etc.) live in `themes/<name>/theme.css` and are scoped
+ * under `.theme-<name>` so every template can define its own look without
+ * clashing with others.
+ */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a0f0a;
+    color: #faf6f0;
+    font-family: 'Jost', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  #root {
+    max-width: 430px;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: #1a0f0a;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: #1a0f0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4880d;
+  border-radius: 10px;
+}

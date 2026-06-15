@@ -1,0 +1,17 @@
+/* App-level styles — most styling lives in index.css + per-theme theme.css */
+
+/* Prevent text selection on UI elements */
+button {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* Smooth scroll anchor behavior */
+[id] {
+  scroll-margin-top: 0;
+}
+
+/* Ensure sections fill width */
+section {
+  width: 100%;
+}
