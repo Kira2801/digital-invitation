@@ -33,7 +33,8 @@ function App() {
     setIsPlaying(!isPlaying);
   };
 
-  return (
+  return (    
+    
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Opening Screen */}
       <AnimatePresence>
@@ -85,7 +86,7 @@ function App() {
         </section>
 
         {/* Event Section */}
-        <EventSection event={invitationData} />
+        <EventSection event={invitationData.events} />
 
         {/* Gallery Section */}
         <GallerySection images={invitationData.gallery} />

@@ -1,7 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Event = ({ event }) => {
+const Event = ({ event = [] }) => {
+  const ceremony = event.find(
+    item => item.type === "ceremony"
+  );
+
+  const reception = event.find(
+    item => item.type === "reception"
+  );
+
+  if (!ceremony) {
+    return null;
+  }
   return (
     <section className="py-20 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
@@ -34,9 +45,9 @@ const Event = ({ event }) => {
                 </svg>
               </div>
               <h3 className="text-2xl font-serif text-gray-800 mb-2">
-                {event.ceremony.name}
+                {ceremony.name}
               </h3>
-              <p className="text-amber-600 font-medium">{event.ceremony.time}</p>
+              <p className="text-amber-600 font-medium">{ceremony.time}</p>
             </div>
 
             <div className="space-y-4">
@@ -46,13 +57,13 @@ const Event = ({ event }) => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <div>
-                  <p className="font-medium text-gray-800">{event.ceremony.location}</p>
-                  <p className="text-sm text-gray-600">{event.ceremony.address}</p>
+                  <p className="font-medium text-gray-800">{ceremony.location}</p>
+                  <p className="text-sm text-gray-600">{ceremony.address}</p>
                 </div>
               </div>
 
               <a
-                href={event.ceremony.mapUrl}
+                href={ceremony.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-medium"
@@ -77,9 +88,9 @@ const Event = ({ event }) => {
                 </svg>
               </div>
               <h3 className="text-2xl font-serif text-gray-800 mb-2">
-                {event.reception.name}
+                {reception.name}
               </h3>
-              <p className="text-pink-600 font-medium">{event.reception.time}</p>
+              <p className="text-pink-600 font-medium">{reception.time}</p>
             </div>
 
             <div className="space-y-4">
@@ -89,13 +100,13 @@ const Event = ({ event }) => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <div>
-                  <p className="font-medium text-gray-800">{event.reception.location}</p>
-                  <p className="text-sm text-gray-600">{event.reception.address}</p>
+                  <p className="font-medium text-gray-800">{reception.location}</p>
+                  <p className="text-sm text-gray-600">{reception.address}</p>
                 </div>
               </div>
 
               <a
-                href={event.reception.mapUrl}
+                href={reception.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors font-medium"
