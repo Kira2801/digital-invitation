@@ -30,12 +30,18 @@ const invitationData = {
       childPosition: 'First Daughter of',
       parents: 'Mr. Ahmad & Mrs. Sari',
       sealInitial: 'L',
+      // Optional portrait used by themes with a photo hero (e.g. "lavender")
+      photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=750&fit=crop&q=80',
+      instagram: '@lulu.luthfiyahh',
     },
     groom: {
       shortName: 'Alex',
       fullName: 'Alexander Rizky',
       childPosition: 'First Son of',
       parents: 'Mr. Hendra & Mrs. Dewi',
+      // Optional portrait used by themes with a photo hero (e.g. "lavender")
+      photo: 'https://images.unsplash.com/photo-1500648767791-00d5a4ee9bb3?w=600&h=750&fit=crop&q=80',
+      instagram: '@alexander_rizkyy',
     },
   },
 
@@ -109,6 +115,21 @@ const invitationData = {
       { color: '#f5ebe0', label: 'Cream' },
     ],
     note: 'but any color is welcome except white and gray.',
+  },
+
+  // ── Gallery ─────────────────────────────────────────────────────────────
+  // Used by themes that include a photo gallery section (e.g. "lavender").
+  gallery: {
+    heading: 'Our Moments',
+    subheading: 'A few favorite frames from our journey together',
+    photos: [
+      { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=500&h=500&fit=crop&q=80', alt: 'Couple photo 1' },
+      { src: 'https://images.unsplash.com/photo-1525258946800-98cfd641fa0f?w=500&h=500&fit=crop&q=80', alt: 'Couple photo 2' },
+      { src: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=500&h=500&fit=crop&q=80', alt: 'Couple photo 3' },
+      { src: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=500&h=500&fit=crop&q=80', alt: 'Couple photo 4' },
+      { src: 'https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=500&h=500&fit=crop&q=80', alt: 'Couple photo 5' },
+      { src: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=500&h=500&fit=crop&q=80', alt: 'Couple photo 6' },
+    ],
   },
 
   // ── Love story timeline ─────────────────────────────────────────────────

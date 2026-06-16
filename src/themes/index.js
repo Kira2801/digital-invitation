@@ -1,4 +1,5 @@
 import ElegantTheme from './elegant/Theme';
+import LavenderTheme from './lavender/Theme';
 
 /**
  * themes/index.js — Theme Registry
@@ -21,6 +22,12 @@ const themes = {
     name: 'Elegant',
     description: 'Gold & cream — classic, romantic, shimmering.',
     component: ElegantTheme,
+  },
+
+  lavender: {
+    name: 'Lavender',
+    description: 'Soft lavender & blush pastel — playful, romantic, semi-colorful.',
+    component: LavenderTheme,
   },
 
   // floral: { name: 'Floral', description: '...', component: FloralTheme },
